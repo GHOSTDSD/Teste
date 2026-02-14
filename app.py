@@ -116,7 +116,7 @@ def make_request(encrypt, server_name, token):
         'ReleaseVersion': "OB50"
     }
 
-    response = requests.post(url, data=edata, headers=headers, verify=False)
+    response = requests.post(url, data=edata, headers=headers)
     hex_data = response.content.hex()
     binary = bytes.fromhex(hex_data)
     return decode_protobuf(binary)
